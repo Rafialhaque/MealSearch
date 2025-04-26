@@ -1,32 +1,82 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meal Finder</title>
+  <title>CountryInfo Finder</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Hero Banner -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">CountryInfo</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero & Search -->
   <header class="hero">
-    <div class="hero-overlay">
-      <h1>Discover Delicious Meals</h1>
-      <p>Browse today’s featured dishes or search for your favorite recipe.</p>
+    <div class="container">
+      <h1>Discover Country Data</h1>
+      <p>Search for any country to get detailed info and live weather.</p>
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="e.g. Chicken, Pasta…" />
+        <input id="search-input" type="text" placeholder="Enter country name..." />
         <button id="search-btn">Search</button>
       </div>
     </div>
   </header>
 
-  <!-- Featured / Search Results -->
-  <main>
+  <!-- Results Grid -->
+  <main class="container">
     <section id="results" class="grid"></section>
   </main>
 
-  <footer>
-    <p>Powered by <a href="https://www.themealdb.com" target="_blank">TheMealDB API</a></p>
+  <!-- Details Modal -->
+  <div id="details-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-flag">
+          <img id="modal-flag-img" src="" alt="Country flag"/>
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <p id="modal-region"></p>
+
+          <div class="modal-section">
+            <h3>Details</h3>
+            <p><strong>Capital:</strong> <span id="modal-capital"></span></p>
+            <p><strong>Population:</strong> <span id="modal-population"></span></p>
+            <p><strong>Languages:</strong> <span id="modal-languages"></span></p>
+            <p><strong>Currencies:</strong> <span id="modal-currencies"></span></p>
+          </div>
+
+          <div class="modal-section weather-ui">
+            <h3>Current Weather</h3>
+            <div class="weather-card">
+              <div class="weather-icon" id="modal-weather-icon">☀️</div>
+              <div class="weather-data">
+                <p><span id="modal-temp"></span>°C</p>
+                <p><span id="modal-wind"></span> m/s</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-close-details">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 CountryInfo. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
