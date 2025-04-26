@@ -1,0 +1,34 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meal Finder</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>Discover Delicious Meals</h1>
+      <p>Browse today’s featured dishes or search for your favorite recipe.</p>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="e.g. Chicken, Pasta…" />
+        <button id="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Featured / Search Results -->
+  <main>
+    <section id="results" class="grid"></section>
+  </main>
+
+  <footer>
+    <p>Powered by <a href="https://www.themealdb.com" target="_blank">TheMealDB API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
